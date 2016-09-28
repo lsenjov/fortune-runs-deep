@@ -1,0 +1,10 @@
+In-suit
+Stat+ 2 => 40+80 + 4*(20+40) = 120+240 = 360
+
+Out-suit
+Stat+ 1 => 50 + 4*30 = 50 + 120 = 170
+
+Full setup
+3*170 + 360 = 510 + 360 = 870
+Increasing In-suit stat makes 990 XP
+Increasing Out-suit stat makes 970 XP
