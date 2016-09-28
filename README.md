@@ -110,6 +110,7 @@ All characters begin with:
 ## Clubs ♣
 ### A
 Lance "Shotgun" Spencer
+
 Body 3/2
 Dexterity 1
 Intelligence 1 (Profession: Barkeeper) (Proficiency: Shotgun, Unarmed, Blunt)
@@ -119,6 +120,7 @@ Starting XP 10
 ## Diamonds ♦
 ### A
 Brent "Devil" Lawson
+
 Body 1
 Dexterity 3/2
 Intelligence 1 (Profession: Lawman, Bounty Hunter) (Proficiency: Rifle, Unarmed)
