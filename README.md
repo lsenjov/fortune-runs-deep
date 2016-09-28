@@ -6,6 +6,10 @@ This is the Fortune Runs Deep(FRD) role playing system desgined by Logan Senjov.
 
 This information is repeated later in the book in greater detail, but for now is a summary the main points.  Statistics and Skills are underlined.
 
+## Link to Character Sheet
+
+https://drive.google.com/open?id=0BxBHX-cJ7v3kT08ta2QzYmptSWc
+
 ## Glossary
 - Player: You, your friends, and anyone else playing the game.
 - Character: The person you play in Fortune Runs Deep.
