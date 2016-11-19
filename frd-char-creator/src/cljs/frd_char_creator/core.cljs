@@ -11,8 +11,8 @@
 (def skillsList
   {:Body [:Endurance :Strength :Threshold :Toughness]
    :Dexterity [:Aim :Ledgerdemain :Speed :Stealth]
-   :Savvy [:AnimalKen :Dodge :Perception :Social]
    :Intelligence [:Profession1 :Profession2 :Proficiency1 :Proficiency2]
+   :Savvy [:AnimalKen :Dodge :Perception :Social]
    }
   )
 
