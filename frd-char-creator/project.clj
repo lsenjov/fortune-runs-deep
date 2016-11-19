@@ -27,7 +27,9 @@
   :plugins [[lein-environ "1.0.2"]
             [lein-cljsbuild "1.1.1"]
             [lein-asset-minifier "0.2.7"
-             :exclusions [org.clojure/clojure]]]
+             :exclusions [org.clojure/clojure]]
+            [lein-ring "0.9.7"]
+            ]
 
   :ring {:handler frd-char-creator.handler/app
          :uberwar-name "frd-char-creator.war"}
