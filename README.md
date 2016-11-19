@@ -121,6 +121,50 @@ Intelligence 1 (Profession: Barkeeper) (Proficiency: Shotgun, Unarmed, Blunt)
 Savvy 1
 Starting XP 10
 
+### K
+Scalper Bates
+
+Body 3 Threshold 2
+Dexterity 1
+Intelligence 0
+Savvy 1
+Starting XP 0
+
+### Q
+Lillian Alexander
+
+Body 3/2
+Dexterity 0
+Intelligence 1 (Profession: Prospector, Miner) (Proficiency: Blunt, Explosives)
+Savvy 2/1 Social 2
+Starting XP 20
+
+### J
+Adam "One-Eye" Peters
+
+Body 3
+Dexterity 1
+Intelligence 1 (Profession: Butcher) (Proficiency: Blades)
+Savvy 0
+
+### 10
+Eric Bush
+
+Body 2
+Dexterity 1
+Intelligence 2 (Profession: Blacksmith) (Proficiency: Blades)
+Savvy 1 Animal Ken 0
+Remaining XP 0
+
+### 9
+Christy Wright
+
+Body 3/2
+Dexterity 0
+Intelligence 2 (Profession: Railroad Engineer) (Proficiency: Blunt)
+Savvy 1
+Remaining XP 20
+
 ## Diamonds ♦
 ### A
 Brent "Devil" Lawson
