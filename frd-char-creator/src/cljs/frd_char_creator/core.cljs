@@ -16,6 +16,11 @@
    }
   )
 
+(def fortuneSkillsList
+  {:Fortune [:Bonus :Capacity :Return]
+   }
+  )
+
 ;; -------------------------
 ;; State
 (def appState
@@ -27,6 +32,12 @@
                          skillsList
                          )
                     )
+     :fortuneSkills (apply merge {}
+                           (apply merge {} (for [stat (keys fortuneSkillsList)] {stat {:value 1}}))
+                           (map (fn [[k v]] (apply merge {} (for [skill v] {skill {:parent k :value 1}})))
+                                fortuneSkillsList
+                                )
+                           )
      :maximumSkill 5
      :totalSpent 0
      }
@@ -181,32 +192,19 @@
 
 (defn- skill-slider-component
   [^Keyword k]
-  [:ul {:class "pagination"}
-   [:li
-    [:a {:href "#" :onClick #(dec-skill k)} "<"
-     ]
-    ]
+  [:div {:class "btn-group"}
    (doall (for [n (range (inc (:maximumSkill @appState)))]
             ^{:key n}
-            [:li {:class (if (= n (get-in @appState [:skills k :value]))
-                           "active"
-                           ""
-                           )
-                  :onClick #(set-skill k n)
-                  }
-             [:a {:href "#"
-                  }
-              n
-              ]
+            [:span {:class (if (= n (get-in @appState [:skills k :value]))
+                             "btn btn-info btn-sm"
+                             "btn btn-default btn-sm"
+                             )
+                    :onClick #(set-skill k n)
+                    }
+             n
              ]
             )
           )
-   [:li
-    [:a
-     {:href "#" :onClick #(inc-skill k)}
-     ">"
-     ]
-    ]
    ]
   )
 
@@ -261,6 +259,7 @@
       [:tr>td "Shrug: " (apply + 6 (map get-skill [:Body :Toughness]))]
       [:tr>td "Movement: " (+ 6 (get-skill :Dexterity) (get-skill :Speed)) " m/round"]
       [:tr>td "Spent XP: " (:totalSpent @appState)]
+      ;; Slider
       (if (> (:totalSpent @appState) 1000)
         ;; Negative amount left
         [:tr>td "Negative XP: " (- 1000 (:totalSpent @appState))
@@ -280,8 +279,6 @@
                                     int
                                     ;; Add percentage
                                     (str "%")
-                                    ;; TODO remove
-                                    (#(do (log/info "Percentage:" %) %))
                                     )
                          }
                  }
