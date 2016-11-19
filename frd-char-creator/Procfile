@@ -1,0 +1,1 @@
+web: java $JVM_OPTS -cp target/frd-char-creator.jar clojure.main -m frd-char-creator.server
