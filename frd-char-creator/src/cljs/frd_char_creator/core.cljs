@@ -23,7 +23,7 @@
 
 ;; -------------------------
 ;; State
-(def appState
+(defonce appState
   (atom
     {:suit :Body
      :skills (apply merge {}
@@ -251,51 +251,49 @@
   "Displays stats about the current character"
   []
   (fn []
-    [:table {:class "table table-striped table-hover "}
-     [:tbody
-      [:tr>td "Health Points: " (+ 10 (get-skill :Body) (get-skill :Endurance))]
-      [:tr>td "Fortune Points: " 4]
-      [:tr>td "Avoidance: " (apply + 7 (map get-skill [:Dexterity :Speed :Dodge]))]
-      [:tr>td "Shrug: " (apply + 6 (map get-skill [:Body :Toughness]))]
-      [:tr>td "Movement: " (+ 6 (get-skill :Dexterity) (get-skill :Speed)) " m/round"]
-      [:tr>td "Spent XP: " (:totalSpent @appState)]
-      ;; Slider
-      (if (> (:totalSpent @appState) 1000)
-        ;; Negative amount left
-        [:tr>td "Negative XP: " (- 1000 (:totalSpent @appState))
-         [:div {:class "progress"}
-          [:div {:class "progress-bar progress-bar-danger"
-                 :style {:width (-> @appState
-                                    :totalSpent
-                                    ;; Totalspent is >1000, get the surplus
-                                    (#(- % 1000))
-                                    ;; Cap it at 1000
-                                    (min 1000)
-                                    ;; Divide by 1000
-                                    (/ 1000)
-                                    ;; We have a decimal amount, now convert to percentage
-                                    (* 100)
-                                    ;; Remove decimal
-                                    int
-                                    ;; Add percentage
-                                    (str "%")
-                                    )
-                         }
-                 }
-           ]
+    [:span
+     [:div "Health Points: " (+ 10 (get-skill :Body) (get-skill :Endurance))]
+     [:div "Fortune Points: " 4]
+     [:div "Avoidance: " (apply + 7 (map get-skill [:Dexterity :Speed :Dodge]))]
+     [:div "Shrug: " (apply + 6 (map get-skill [:Body :Toughness]))]
+     [:div "Movement: " (+ 6 (get-skill :Dexterity) (get-skill :Speed)) " m/round"]
+     [:div "Spent XP: " (:totalSpent @appState)]
+     ;; Slider
+     (if (> (:totalSpent @appState) 1000)
+       ;; Negative amount left
+       [:div "Negative XP: " (- 1000 (:totalSpent @appState))
+        [:div {:class "progress"}
+         [:div {:class "progress-bar progress-bar-danger"
+                :style {:width (-> @appState
+                                   :totalSpent
+                                   ;; Totalspent is >1000, get the surplus
+                                   (#(- % 1000))
+                                   ;; Cap it at 1000
+                                   (min 1000)
+                                   ;; Divide by 1000
+                                   (/ 1000)
+                                   ;; We have a decimal amount, now convert to percentage
+                                   (* 100)
+                                   ;; Remove decimal
+                                   int
+                                   ;; Add percentage
+                                   (str "%")
+                                   )
+                        }
+                }
           ]
          ]
-        ;; Fine
-        [:tr>td "Remaining XP: " (- 1000 (:totalSpent @appState))
-         [:div {:class "progress"}
-          [:div {:class "progress-bar"
-                 :style {:width (str (int (* (/ (- 1000 (:totalSpent @appState)) 1000) 100)) "%")}
-                 }
-           ]
+        ]
+       ;; Fine
+       [:div "Remaining XP: " (- 1000 (:totalSpent @appState))
+        [:div {:class "progress"}
+         [:div {:class "progress-bar"
+                :style {:width (str (int (* (/ (- 1000 (:totalSpent @appState)) 1000) 100)) "%")}
+                }
           ]
          ]
-        )
-      ]
+        ]
+       )
      ]
     )
   )
