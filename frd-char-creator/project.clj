@@ -113,4 +113,12 @@
                        :prep-tasks ["compile" ["cljsbuild" "once" "min"]]
                        :env {:production true}
                        :aot :all
-                       :omit-source true}})
+                       :omit-source true}
+             :uberwar {:hooks [minify-assets.plugin/hooks]
+                       :source-paths ["env/prod/clj"]
+                       :prep-tasks ["compile" ["cljsbuild" "once" "min"]]
+                       :env {:production true}
+                       :aot :all
+                       :omit-source true}
+             }
+)
