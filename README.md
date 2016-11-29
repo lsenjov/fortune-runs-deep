@@ -26,6 +26,12 @@ Fortune Points (FP):  Spend a Fortune Point to:
 
 You can spend Fortune Points until you run out.  You get your Return in Fortune Points back each scene (your GM will tell you).
 
+### Skill Checks
+
+1. GM calculates TN (generally 2 + current difficulty)
+2. Roll 2d6 + Skill + Parent Statistic + Any applicable profession. In the case of profession checks, the skill is counted twice.
+3. Compare to the TN. If equal or greater, you succeed.
+
 ### Attacking:
 
 1. To hit:  Roll 2d6 plus your Attack Bonus, minus the weapon's inaccuracy (for range), or slow (for melee).  You must equal or beat the target's avoidance.
