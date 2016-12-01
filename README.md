@@ -113,7 +113,7 @@ All characters begin with:
 
 ## Clubs ♣
 ### A
-Lance "Shotgun" Spencer
+"Shotgun" Spencer
 
 Body 3/2
 Dexterity 1
@@ -164,6 +164,27 @@ Dexterity 0
 Intelligence 2 (Profession: Railroad Engineer) (Proficiency: Blunt)
 Savvy 1
 Remaining XP 20
+
+### 8
+Bobbie Meyer
+
+### 7
+Bonnie Butler
+
+### 6
+Bradley "Scalphunter" Holmes
+
+### 5
+Norma Nelson
+
+### 4
+Jerome Watkins
+
+### 3
+Ruth Stevens
+
+### 2
+Ray Nichols
 
 ## Diamonds ♦
 ### A
